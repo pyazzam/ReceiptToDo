@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receipt To-Do List</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+128&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="app.js"></script>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="receipt-container">
+            <button id = 'delete' class="delete">
+                <?xml version="1.0" encoding="UTF-8"?><svg width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000"><path d="M20 9L18.005 20.3463C17.8369 21.3026 17.0062 22 16.0353 22H7.96474C6.99379 22 6.1631 21.3026 5.99496 20.3463L4 9" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M21 6L15.375 6M3 6L8.625 6M8.625 6V4C8.625 2.89543 9.52043 2 10.625 2H13.375C14.4796 2 15.375 2.89543 15.375 4V6M8.625 6L15.375 6" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </button>
+            <button id="hideCompleted" class="more">
+                <?xml version="1.0" encoding="UTF-8"?><svg width="24px" height="24px" stroke-width="1.5" viewBox="0 0 24 24" fill="none"  xmlns="http://www.w3.org/2000/svg" ><path d="M19.1414 5C17.3265 3.14864 14.7974 2 12 2C6.47715 2 2 6.47715 2 12C2 14.7255 3.09032 17.1962 4.85857 19M19.1414 5C20.9097 6.80375 22 9.27455 22 12C22 17.5228 17.5228 22 12 22C9.20261 22 6.67349 20.8514 4.85857 19M19.1414 5L4.85857 19" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </button>
+            <div class="receipt-header">
+                <h1>Calclueless</h1>
+                <div class="date"></div>
+            </div>
+            <div class="dashed-line"></div>
+            <div class="top-bar">
+                <button id="addButton" class="add">
+                    <?xml version="1.0" encoding="UTF-8"?><svg width="24px" height="24px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#fff"><path d="M6 12H12M18 12H12M12 12V6M12 12V18" stroke="var(--secondary-text)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                </button>
+
+            </div>
+            <div class="tasks-container">
+                <table id="tableID">
+                    <thead>
+                        <tr>
+                            <th style="width: 70%;">Name</th>
+                            <th style="width: 25%;">Priority</th>
+                            <th style="width: 5%;"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        
+                    </tbody>
+                </table>
+                <div class="dashed-line"></div>
+                <div class="receipt-footer">
+                    <div class="details">
+                        <div class="total">
+                            <p>Total :</p>
+                            <p id="totaltotal">0</p>
+                        </div>
+                        <div class="totalUncompleted">
+                            <p class="total-uncompleted-title">Total Uncompleted:</p>
+                            <p id="numberOfTasks">0</p>
+                        </div>
+                        <div class="download">
+                            <p>Download:</p>
+                            <a href="#">PDF</a>
+                        </div>
+                    </div>
+                    <p class="barcode">gjlfoighfceokmnwn</p>
+                    <p class="thanks">Thank you for wasting your time with us!</p>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+
+    <div id="overlayID" class="overlay"></div>
+    <div class="modal-container">
+        <div class="modal-content">
+            <div class="top-bar-modal">
+                <h1>Add a Task</h1>
+                <button id="close" class="close">
+                    <?xml version="1.0" encoding="UTF-8"?><svg width="24px" height="24px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000"><path d="M6.75827 17.2426L12.0009 12M17.2435 6.75736L12.0009 12M12.0009 12L6.75827 6.75736M12.0009 12L17.2435 17.2426" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                </button>
+            </div>
+            <form action="">
+                <label id="namelabel" for="TaskName">Name:</label> <br>
+                <input placeholder="Change the world" type="text" id="name" name="tName"> <br>
+                <label id="prioritylabel" for="priority">Priority:</label><br>
+                <select  aria-placeholder="Priority" name="priorityname" id="selectid">
+                    <option value="urgent">urgent</option>
+                    <option value="mid">mid</option>
+                    <option value="whenever">whenever</option>
+                </select> <br>
+                <input id="continueId" class="submitBtn" type="submit" value="Continue">
+            </form>
+        </div>
+    </div>
+
+
+</body>
+</html>
